@@ -1,0 +1,65 @@
+// ========= Colors ==========
+$primary: #2911b3;
+$primary-100: #3358ff;
+$primary-900: #1b0885;
+$secondary: #ffae00;
+$secondary-100: #ffe600;
+$green: #57c768;
+$red: #ce0f0f;
+$dark: #000000;
+$white: #ffffff;
+$gray: #f5f6fa;
+
+// ========= mixins ==========
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+@mixin flexCenter($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin grid($column, $gap: 0) {
+  display: grid;
+  grid-template-columns: $column;
+  grid-gap: $gap;
+}
+@mixin gridRows($row, $gap: 0) {
+  display: grid;
+  grid-template-rows: $row;
+  grid-gap: $gap;
+}
+@mixin fontStyle($size, $weight, $line-height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+@mixin transition($duration: 0.2s) {
+  transition: all ease-in-out $duration;
+}
+@mixin fixPosition($l, $t) {
+  position: fixed;
+  left: $l;
+  top: $t;
+}
+
+// ========= animation ==========
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px $white, 0 0 20px $white, 0 0 30px $primary,
+      0 0 40px $primary-900, 0 0 50px $primary-900, 0 0 60px $primary-900,
+      0 0 70px $primary-900;
+  }
+
+  to {
+    text-shadow: 0 0 20px $white, 0 0 30px $primary-100, 0 0 40px $primary-100,
+      0 0 50px $primary-100, 0 0 60px $primary-100, 0 0 70px $primary-100,
+      0 0 80px $primary-100;
+  }
+}
